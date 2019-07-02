@@ -1,6 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
+
+
+/* ===========       loader      ======================= */
+.loading{
+ width: 100%;
+ height: 100vh;
+ background-image: radial-gradient(farthest-corner at 40px 40px,
+      rgb(158, 163, 80) 0%, rgb(58, 50, 27) 100%);
+text-align: center;
+
+		padding: 200px 0 0 0;
+}
+
+.animation{
+    font-size: 200px;
+    color: white;
+}
+
+#animation {
+		animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+		from {
+				transform: rotate(0deg);
+		}
+		to {
+				transform: rotate(359deg);
+		}
+}
+
+
 /* =========== main App settings ======================= */
 * {
   box-sizing: border-box;
@@ -116,12 +148,6 @@ input[type="number"] {
   padding: 1%
 }
 
-input[type="number"]:hover{
--webkit-box-shadow: 0px 0px 25px 0px rgba(120,158,125,1);
--moz-box-shadow: 0px 0px 25px 0px rgba(120,158,125,1);
-box-shadow: 0px 0px 25px 0px rgba(120,158,125,1);
-
-}
 input[type=radio] {
   display: none
 }
@@ -186,7 +212,7 @@ background: url("./static/dice/k20s.jpg");
   background-size: cover;
 }
 
-/* =======================dices type ==================== */
+/* =======================dices type --- left ==================== */
 
 input[type="radio"]:hover+label 
 {
