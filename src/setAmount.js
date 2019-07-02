@@ -8,7 +8,7 @@ class SetAmount extends Component {
     setAmount = (e) => {
 
         this.props.setCounter(parseInt(this.dicesAmount.value))
-     
+
     }
 
 
@@ -16,11 +16,11 @@ class SetAmount extends Component {
     render() {
         return (
             <div>
-               
-                    <label htmlFor="number" > Ilość kości:</label>
-                    <input name="number" type="number" ref={input => this.dicesAmount = input} min="1" max="12" placeholder="0" />
-                    <input type="submit" value="zatwierdź" onClick={() => { this.setAmount() }} />
-                
+
+                <label htmlFor="number" > Ilość kości:</label>
+                <input name="number" type="number" ref={input => this.dicesAmount = input} min="1" max="20" placeholder="0" size="2" />
+                <input type="submit" value="Rzucaj" onClick={() => { this.setAmount() }} />
+
             </div>)
 
 

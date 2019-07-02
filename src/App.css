@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
-  *{box-sizing: border-box;
+/* =========== main App settings ======================= */
+* {
+  box-sizing: border-box;
   margin: 0;
-padding: 0}
-.App {
-  text-align: center;
+  padding: 0}
 
+
+body {
+    background-image: radial-gradient(farthest-corner at 40px 40px,
+      rgb(158, 163, 80) 0%, rgb(58, 50, 27) 100%);
+      height: 100%;
+      min-height: 100vh;
+}
+.green{
+  color: green;}
+
+.red {
+  color: red
+}
+.App{
+  text-align: center;
 }
 
 .App-header {
@@ -26,47 +41,22 @@ padding: 0}
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   bottom: 0;
   color: white;
+  clear: both;
+  position: static;
 }
 
 div.App{
-  background: url("./static/media/kanwa.jpg") repeat;
-  background-size: cover;
 
-
-  width: 100%;
-  height: 100vh;
+  text-align: center;
 }
 
-h1 {
+.title__header{
   font-size: calc(45px + 2vmin);
  font-family: 'Dancing Script', cursive;
   padding: 1%;
   margin: 2px;
-}
-
-p {
-  font-size: calc(12px + 2vmin);
- font-family: 'Dancing Script', cursive;
-  padding: 1%;
-  margin: 2px;
-  color: white
-}
-
-label {
-  font-size: calc(12px + 2vmin);
-  padding: 1%;
-  margin: 2px;
-  color: rgb(192, 226, 215);
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: lighter;
-}
-
-.dices-container {
-  display: flex;
-
 }
 
 .left, .right{
@@ -74,52 +64,67 @@ display: flex;
 justify-content: center;
 flex-direction: row;
 width: 48%;
-height: 80%; 
 background: #282c348f;  
 margin: 50px;  
 padding: 20px;
 }
-.records{
-    display: flex;
-justify-content: center;
-flex-direction: row;
-width: 98%;
-height: 100%;
-position: relative;
-font-size: 40px;
-flex-wrap: wrap;
 
+.left {
+  height: 100%;
 }
-.one-record{
+
+/* ====================right============================ */
+
+
+.warning {
+  display: block;
+  widows: 100%;
+  color: white;
+  font-size: calc(15px + 3vh);
+}
+
+.par__records {
+  font-size: calc(10px + 2vh);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: lighter;
+  padding: 1%;
+  margin: 2px;
+  color: rgb(216, 197, 27);
+  display: inline-block;
+}
+
+/* ====================Dices TYPE=================== */
+.dices-container {
   display: flex;
-width: 80px;
-height: 80px;
-background: #3cb1198f;  
-position: relative;
-font-size: 40px;
-margin: 3px;
-justify-content: center;
-align-content: center;
 }
 
+label {
+  font-size: calc(10px + 2vh);
+  padding: 1%;
+  margin: 2px;
+  color: rgb(192, 226, 215);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: lighter;
+}
 
 input[type="number"] {
-  outline-color: rgb(44, 204, 44);
+  outline-color:rgb(70, 61, 15);
   outline-width: 5px;
-  font-size: 24px;
+  border: none;
+  font-size: 16px;
   display: inline-block;
-
+  padding: 1%
 }
 
+input[type="number"]:hover{
+-webkit-box-shadow: 0px 0px 25px 0px rgba(120,158,125,1);
+-moz-box-shadow: 0px 0px 25px 0px rgba(120,158,125,1);
+box-shadow: 0px 0px 25px 0px rgba(120,158,125,1);
 
-
-/* input select */
-
+}
 input[type=radio] {
   display: none
 }
-
-
 
 input[type="radio"]+label{
 height: 100px;
@@ -128,10 +133,7 @@ display:inline-block;
 padding: 0 0 0 0px;
 position: relative;
 margin:5px;
-
-}
-label#k4{
-background: url("./static/dice/k4.jpg");
+background-size: cover ;
 }
 
 label[for="k4"]{
@@ -155,10 +157,49 @@ background: url("./static/dice/k20.jpg");}
 label[for="k100"]{
   background: url("./static/dice/k100.jpg");}
 
-input[type="radio"]+label:hover 
+
+/* dices label */
+.k4{
+  background: url("./static/dice/k4s.jpg");
+  background-size: cover;
+}
+.k6{
+  background: url("./static/dice/k6s.jpg");
+  background-size: cover;
+}
+.k8{
+  background: url("./static/dice/k8s.jpg");
+    background-size: cover;
+  }
+.k10{
+background: url("./static/dice/k10s.jpg");
+  background-size: cover;}
+
+.k12{
+background: url("./static/dice/k12s.jpg");
+  background-size: cover;}
+.k20{
+background: url("./static/dice/k20s.jpg");
+  background-size: cover;}
+.k100{
+  background: url("./static/dice/k100s.jpg");
+  background-size: cover;
+}
+
+/* =======================dices type ==================== */
+
+input[type="radio"]:hover+label 
 {
-border-color: rgb(93, 248, 93);
+border-color: rgb(70, 61, 15);
 border-style: solid;
+border-width: 1px;
+transition: 0.5s;
+}
+
+input[type="radio"]:checked+label{
+border:  rgb(70, 61, 15) solid; 
+border-radius: 25%;
+border-width: 5px;
 }
 
 input[type="submit"] {
@@ -168,31 +209,91 @@ border: 0;
 display: inline-block;
   font-size: 20px;
   padding: 15px;
+  margin: 15px;
+  margin-top: 25px;
+border: none;
+outline: none;
+}
+
+input[type="submit"]:hover:focus:active {
+-webkit-box-shadow: 0px 0px 64px 32px rgba(120,158,125,1);
+-moz-box-shadow: 0px 0px 64px 32px rgba(120,158,125,1);
+box-shadow: 0px 0px 64px 32px rgba(120,158,125,1);
+border: rgb(120,158,125);
+outline: rgb(120,158,125);
 
 }
 
-@media all and (min-width:480px) and (max-width:800px) {
 
+
+/* ======================records================ */
+
+
+.records {
+    display: flex;
+justify-content: center;
+flex-direction: row;
+width: 98%;
+/* height: 100%; */
+position: relative;
+font-size: 40px;
+flex-wrap: wrap;
+}
+
+.one-record {
+  display: flex;
+width: 80px;
+height: 80px; 
+background-size: cover;
+position: relative;
+font-size: 40px;
+margin: 3px;
+justify-content: center;
+align-content: center;
+box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);}
+
+
+
+
+
+
+/* ===========------========= media Q ==============--------============ */
+
+
+
+@media all and (max-width:1198px) {
+div.App{
+    position: relative;
+}
 .left, .right{
-display: flex;
+display: block;
 justify-content: space-around;
 width: 100%;
 height: auto; 
 background: #282c348f; 
-padding: 1%;
 margin: 0;   
+margin-bottom: 3%;
 
 }
 
 .dices-container {
   display: block;
+  margin-bottom: 15px;
 }
 
-.App-footer {
-  position: relative;
+.par__records {
+  font-size: calc(10px + 1vh);
+  color: rgb(216, 197, 27);
+}
+div.par__records p{
+  display: inline-block;
+  margin: 8px;
 }
 
-label {
-  margin: 10px;
+.warning {
+  display: block;
+  font-size: calc(10px + 2vh);
 }
 }
+
+

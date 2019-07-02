@@ -10,12 +10,14 @@ const RecordsList = (props) => {
 
         return (
             <div className="records">
-                <p> Typ kości: k{props.type}</p>
-                <p>Ilość kości: {props.amount}</p>
-
+                <div className="par__records">
+                    <p> Typ kości: k{props.type}</p>
+                    <p>Ilość kości: {props.amount}</p>
+                </div>
                 <Divs amount={props.amount}
                     diceList={props.diceList}
-                    type={props.type} />
+                    type={props.type}
+                />
 
 
             </div>
@@ -24,10 +26,13 @@ const RecordsList = (props) => {
     }
     else {
         return (
-            <div className="records">
-                <p className="warning">Wybierz kości i określ ich ilość. </p>
-                <p> Ilość: {props.amount}</p>
-                <p>Typ kości: {props.type}</p>
+            <div
+                className="records"
+                id="records">
+                <div className="par__records"><p className="warning">Wybierz kości i określ ich ilość, by móc rzucić</p></div>
+                <div className="par__records">
+                    <p> Ilość: {props.amount}</p>
+                    <p>Typ kości: {props.type}</p></div>
 
             </div>)
 
